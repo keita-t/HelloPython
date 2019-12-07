@@ -1,13 +1,6 @@
 #!/usr/bin/python
 
 #
-# Hello World
-#
-
-print("hello python!")
-print(8 * 9)
-
-#
 # 文字列
 #
 
