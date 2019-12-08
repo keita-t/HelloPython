@@ -238,7 +238,7 @@ try:                            # 例外をキャッチする
 except IndexError as err:       # キャッチする例外の種類を指定 err に格納する
     print('Need a position between 0 and',
           len(short_list)-1, 'but got', position)  # IndexError なので表示される
-except Exception as other:      # その他のあらゆる例外(Ｅｘｃｅｐｔｉｏｎ)をキャッチする
+except Exception as other:      # その他のあらゆる例外(Exception)をキャッチする
     print('Something else broke:', other)
 
 
