@@ -246,3 +246,115 @@ class BabblingBrook():  # Quote とはまるで関係ないクラス
 
 
 who_says(BabblingBrook())   # 共通のインターフェースなら継承すら必要ない(ダックタイピング)
+
+
+# 特殊メソッド
+class Word():
+    def __init__(self, text):
+        self.text = text
+
+    def __eq__(self, word2):    # ２つの単語を比較する特殊メソッドの実装(==)
+        return self.text.lower() == word2.text.lower()
+
+
+first = Word('ha')
+second = Word('HA')
+third = Word('eh')
+print(first == second)     # True
+print(first == third)      # False
+
+# 比較のための特殊メソッド
+equal = {
+        '==': '__eq__(self, other)',
+        '!=': '__ne__(self, other)',
+        '<':  '__lt__(self, other)',
+        '>':  '__qt__(self, other)',
+        '<=': '__le__(self, other)',
+        '>=': '__ge__(self, other)',
+    }
+
+# 算術演算のための特殊メソッド
+calc = {
+        '+':  '__add__(self, other)',
+        '-':  '__sub__(self, other)',
+        '*':  '__mul__(self, other)',
+        '//': '__floordiv(self, other)',
+        '/':  '__truediv__(self, other)',
+        '%':  '__mod__(self, other)',
+        '**': '__pow__(self, other)',
+    }
+
+# その他の特殊メソッド
+other = {
+        'str(self)':  '__str__(self)',
+        'repr(self)': '__repr__(self)',
+        'len(self)':  '__len__(self)',
+}
+
+
+class MagicWord():
+    def __init__(self, text):
+        self.text = text
+
+    def __eq__(self, word2):
+        return self.text.lower() == word2.text.lower()
+
+    def __str__(self):
+        return self.text
+
+    def __repr__(self):
+        return 'Word("' + self.text + '")'
+
+
+first = MagicWord('ha')
+first                   # 対話型インタプリンタは __repr__ をエコー出力する
+print(first)            # __str__ を使う
+
+
+# コンポジション
+class Bill():   # くちばし
+    def __init__(self, description):
+        self.description = description
+
+
+class Tail():   # しっぽ
+    def __init__(self, length):
+        self.length = length
+
+
+class Duck():   # アヒルはくちばしとしっぽを持つ（ has-a の関係）
+    def __init__(self, bill, tail):
+        self.bill = bill
+        self.tail = tail
+
+    def about(self):
+        print('This duck has a', self.bill.description,
+              'bill and a', self.tail.length, 'tail')
+
+
+tail = Tail('long')
+bill = Bill('wide orange')
+duck = Duck(bill, tail)     # くちばしとしっぽをもつアヒルの生成
+duck.about()                # 説明を表示
+
+
+# 名前付きタプル
+def named_tuple():  # 名前付きタプルはイミュータブルな値オブジェクトのように振る舞う
+    from collections import namedtuple
+    Duck = namedtuple('Duck', 'bill tail')  # 名前とフィールド名（空白区切りで設定）
+    duck = Duck('wide orange', 'long')      # bill='wode orange', tail='long'
+
+    print(duck)
+    print(duck.bill)    # bill フィールド
+    print(duck.tail)    # tail フィールド
+
+    parts = {'bill': 'wide orange', 'tail': 'long'}
+    duck2 = Duck(**parts)   # 辞書をキーワード引数として渡せる
+    print(duck2)
+
+    duck3 = duck2._replace(
+        tail='magnificent', bill='crushing')  # フィールドを更新した別のタプルの生成
+    print(duck3)
+
+
+named_tuple()

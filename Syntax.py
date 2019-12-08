@@ -74,17 +74,18 @@ print(5 < x < 10 < 999)         # 省略形の長い比較(True)
 # True と False
 
 # False と見なされるもの
-#
-# ブール値        False
-# null          None
-# 整数のゼロ      0
-# floatのゼロ    0.0
-# 空文字列       ''
-# 空リスト        []
-# 空タプル       ()
-# 空辞書        {}
-# 空集合        set()
-#
+is_false = {
+        'ブール値': 'False',
+        'null': 'None',
+        '整数のゼロ': '0',
+        'floatのゼロ': '0.0',
+        '空文字列': "' '",
+        '空リスト': '[]',
+        '空タプル': '()',
+        '空辞書': '{}',
+        '空集合': 'set()'
+    }
+
 some_list = []
 if some_list:
     print("There's something in here")
