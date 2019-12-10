@@ -103,10 +103,10 @@ print(setup.rjust(30))                          # 30 字分のスペースに右
 print(setup.replace('duck', 'marmoset'))        # duck を marmoset に置換
 print(setup.replace('duck', 'marmoset', 100))   # 最高で 100回　置換
 
-
 #
 # Unicode
 #
+
 
 def unicode_test(value):
     import unicodedata
@@ -215,7 +215,7 @@ print('%*.*d %*.*f %*.*s' %
 
 # {} と書式指定を使った新しいスタイル
 print('{} {} {}'.format(n, f, s))           # もっとも簡単な使い方
-print('{2} {0} {1}'.format(n, f, s))        # 引数の順序を指定(f,n,sの順)
+print('{2} {0} {1}'.format(n, f, s))        # 引数の順序を指定(s,n,fの順)
 print('{n} {f} {s}'.format
       (n=42, f=7.03, s='string cheese'))    # キーワード引数で指定
 d = {'n': 42, 'f': 7.03, 's': 'string cheese'}
