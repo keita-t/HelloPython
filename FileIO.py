@@ -350,11 +350,9 @@ class Tiny():  # 文字列を返す小さなクラス
 def pickle_serialize2():
     import pickle
     obj1 = Tiny()
-    print(obj1)
-    print(str(obj1))
+    print(str(obj1))  # 'tiny'
     pickled = pickle.dumps(obj1)  # 独自クラスのオブジェクトをシリアライズ
     obj2 = pickle.loads(pickled)  # デシリアライズ
-    print(obj2)
     print(str(obj2))  # 'tiny'
 
 
