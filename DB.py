@@ -411,4 +411,4 @@ def redis():
     print(conn.get(key))  # 期限切れでもうないので取得できない
 
 
-redis()
+# redis()
