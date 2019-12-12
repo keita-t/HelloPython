@@ -412,3 +412,29 @@ def redis():
 
 
 # redis()
+
+
+# その他の NoSQL
+other_NoSQL = {  # 名前 : Python API
+    'Cassandra',     'pycassa',
+    'CouchDB',       'couchdb-python',
+    'HBase',         'happybase',
+    'Kyoto Cabinet', 'kyotocabinet',
+    'MongoDB',       'mongodb',
+    'Riak',          'riak-python-client',
+    }
+
+
+#
+# フルテキストデータベース
+#
+
+
+Fulltext_DB = {  # 名前 : Python API
+    'Lucene',        'pylucene',
+    'Solr',          'SolPython',
+    'ElasticSearch', 'pyes',
+    'Sphinx',        'sphinxapi',
+    'Xapian',        'xappy',
+    'Whoosh',        '(APIを含めPythonで書かれている)',
+    }
