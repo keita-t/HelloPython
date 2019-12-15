@@ -182,8 +182,11 @@ def bs_scraping():
 
 
 #
-# $ python3 Parallel.py runfunc ... サーバー起動用
+# $ python3 Web.py runfunc ... 起動用
 #
 if (__name__ == '__main__') and (len(sys.argv) > 1):
         print('runnning: ' + sys.argv[1])
-        eval(sys.argv[1])()
+        if len(sys.argv) > 2:
+            eval(sys.argv[1])(tuple(sys.argv[2:]))
+        else:
+            eval(sys.argv[1])()
