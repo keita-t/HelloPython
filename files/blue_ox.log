@@ -1,0 +1,5 @@
+2019-12-16 18:25:59,507 DEBUG 137 Looks like rain
+2019-12-16 18:25:59,507 INFO 138 And hail
+2019-12-16 18:25:59,508 WARNING 139 Did I hear thunder?
+2019-12-16 18:25:59,508 ERROR 140 Was that lightning?
+2019-12-16 18:25:59,508 CRITICAL 141 Stop fencing and get inside!
